@@ -1,45 +1,50 @@
 import { Controller, useForm } from "react-hook-form";
 import Input from "../../components/formComponents/Input";
-import Button from "../../components/formComponents/Button";
+import Button from "../../components/Button";
 import { postUser } from "./api/api";
+import useLoading from "../../hooks/useLoading";
+import useError from "../../hooks/useError";
 export default function Login() {
   const { control, handleSubmit } = useForm();
+  const { isLoading, setIsLoading } = useLoading();
+  const { isError, setIsError } = useError();
 
   const onSubmitLogin = async (data) => {
-
     try {
-      const response = await postUser("", data);
+      setIsLoading(true);
+      const response = await postUser("/users", data);
+      const token = response.data.auth_token;
+
+      localStorage.setItem("token", token);
+
       return response;
     } catch (err) {
-      err.message;
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="min-w-screen min-h-screen bg-[#D8CDBF] flex justify-center items-center">
-      <div className="w-93 h-89 bg-[#FAF9F6] rounded-3xl flex flex-col gap-11 items-center justify-center overflow-hidden ">
+      <div className="w-93 h-89 bg-[#FAF9F6] rounded-3xl flex flex-col gap-11 items-center p-10  overflow-hidden">
         <h1 className="text-2xl text-[#3B4D3E]">Log In</h1>
+
         <form
           className="flex flex-col gap-5"
           onSubmit={handleSubmit(onSubmitLogin)}
         >
           <Controller
-            name="username"
+            name="email"
             control={control}
             render={({ field }) => (
-              <Input
-                {...field}
-                width={"w-68"}
-                placeholder={"masukan username"}
-              />
+              <Input {...field} width={"w-68"} placeholder={"masukan email"} />
             )}
           />
           <Controller
             name="password"
             control={control}
             render={({ field }) => {
-              console.log(field);
-
               return (
                 <Input
                   {...field}
@@ -51,8 +56,7 @@ export default function Login() {
             }}
           />
           <Button width={"w-68"} height={"h-9"}>
-            {" "}
-            Log In{" "}
+            Log In
           </Button>
         </form>
       </div>

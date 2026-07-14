@@ -1,16 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router";
 import "./App.css";
-import Login from "./features/auth/Login";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-
-  return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/account/login" element= {<Login/>}/>
-        </Routes>
-      </BrowserRouter>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
