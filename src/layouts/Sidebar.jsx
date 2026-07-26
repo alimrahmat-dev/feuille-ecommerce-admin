@@ -6,22 +6,24 @@ import {
   faCreditCard,
   faTruckFast,
   faUser,
-  faMagnifyingGlass
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-regular-svg-icons";
 import { NavLink } from "react-router";
 import Dropdown from "../components/Dropdown";
+import {  sidebarDropdownArray } from "../utils/menuSidebar";
 
 export default function Sidebar({ className }) {
+  const list2 = ["tifa", "empat"];
   return (
     <div
       className={`bg-[#3B4D3E] ${className} flex flex-col items-center gap-15 text-[#FFFFFF] p-4 text-[16px] `}
     >
       {/* logo */}
       <div className="font-intel-mono">FEUILLE</div>
-      {/* menu sidebar */}
 
-      <div className=" flex flex-col items-center gap-5  p-2 w-1/2 bg-blue-600">
+      {/* menu sidebar */}
+      <div className=" flex flex-col items-center gap-5  p-2 w-1/2">
         {/* dashboard */}
         <ul className="flex flex-col items-center justify-center ">
           <li className="flex gap-4 items-center   min-w-33">
@@ -30,20 +32,24 @@ export default function Sidebar({ className }) {
           </li>
         </ul>
         <hr className="border border-white w-40" />
-        <ul className="flex flex-col items-center justify-center gap-5 w-full bg-red-600  ">
-          <li className="flex gap-4 items-center justify-between  min-w-35">
-            <FontAwesomeIcon icon={faBoxArchive} />
-            <NavLink to="/dashboard">Product</NavLink>
-            <FontAwesomeIcon icon={faChevronRight} />
+        <ul className="flex flex-col items-center justify-center gap-5 w-full  ">
+          <li className="flex gap-4 items-center justify-between  min-w-35  flex-col">
+            {/* <button className="flex gap-4">
+              <FontAwesomeIcon icon={faBoxArchive} />
+              <NavLink to="/dashboard">Product</NavLink>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button> */}
+
+            <Dropdown className={``} list={sidebarDropdownArray} />
           </li>
-          <li>
-            <Dropdown>sdfsasdfsadfsadfdasfdsasdfdasf</Dropdown>
-          </li>
+
           <li className="flex gap-4 items-center justify-between  min-w-35 ">
             <FontAwesomeIcon icon={faBoxesPacking} />
             <NavLink to="/dashboard">Order</NavLink>
             <FontAwesomeIcon icon={faChevronRight} />
           </li>
+          <Dropdown list={list2} />
+
           <li className="flex gap-4 items-center justify-between  min-w-35">
             <FontAwesomeIcon icon={faTruckFast} />
             <NavLink to="/dashboard">Delivery</NavLink>
@@ -67,7 +73,7 @@ export default function Sidebar({ className }) {
       </div>
       {/* footer */}
       <footer className="py-4 text-center text-sm font-inter text-gray-500">
-        <p>&copy; 2026  FEUILLE. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2026 FEUILLE. Hak Cipta Dilindungi.</p>
       </footer>
     </div>
   );
