@@ -6,4 +6,4 @@ export default function useError()
 
     return {isError,setIsError}
 
-}
+}   

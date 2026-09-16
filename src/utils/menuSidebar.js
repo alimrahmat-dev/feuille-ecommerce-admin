@@ -1,24 +1,32 @@
-import { faBoxArchive, faClipboardList, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faBoxArchive,faBoxesPacking, faClipboardList, faCircle, faBoxOpen } from '@fortawesome/free-solid-svg-icons';
 
-const product = {
+const product = 
+    {
     labels : "Product",
-    icon : {faBoxArchive},
+    icon : faBoxArchive,
     list : [
         {
-            labels: "product",
-            icon : {faBoxArchive}
+            labels: "Product",
+            path : "product",
+            icon : faBoxArchive
+        },
+        {
+            labels: "Variant",
+            path : "product varian",
+            icon : faBoxOpen
         }
     ]
 }
+
 const order = {
     labels : "Order",
-    icon : "faBoxArchive",
+    icon : faBoxesPacking,
     list : [
         {
-            labels: "product",
-            icon : {faBoxArchive}
+            labels: "order",
+            icon : faBoxesPacking
         }
     ]
 }
 
-export const sidebarDropdownArray = [product,order]
+export const sidebarDropdownArray = {product,order}
