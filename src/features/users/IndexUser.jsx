@@ -17,7 +17,7 @@ console.log(data);
   return (
     <>
       <Main>
-        <div className="min-w-full h-auto bg-white rounded-[64px] p-10  border border-amber-300">
+        <div className="content">
           <div className="rounded-lg  overflow-y-hidden overflow-x-hidden">
             <table className=" w-full">
               <thead className="bg-gray-100 ">

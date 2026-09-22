@@ -3,6 +3,7 @@ import Login from "../features/auth/Login";
 import ProtectedRoute from "../routes/ProtectedRoute";
 import Dashboard from "../features/Dashboard/Dashboard";
 import IndexUser from "../features/users/IndexUser";
+import IndexProduct from "../features/products/IndexProduct";
 export default function AppRoutes() {
   const token = localStorage.getItem("token");
   return (
@@ -14,6 +15,7 @@ export default function AppRoutes() {
         </Route> */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/user" element={<IndexUser />} />
+        <Route path="/product" element={<IndexProduct />} />
       </Routes>
     </BrowserRouter>
   );

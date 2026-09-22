@@ -5,3 +5,12 @@
 @theme {
    --font-intel-mono: "Intel One Mono", monospace;
 }
+
+@layer components{
+   .content{
+      @apply min-w-full h-auto bg-white rounded-[64px] p-10  border border-amber-300
+   }
+   .index-table{
+      @apply rounded-lg  overflow-y-hidden overflow-x-hidden
+   }
+}
