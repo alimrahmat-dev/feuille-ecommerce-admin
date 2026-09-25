@@ -3,24 +3,30 @@ import { faPenToSquare, faTrashCan, faSquarePlus } from "@fortawesome/free-regul
 
 import Main from "../../layouts/Main";
 import Modal from "../../components/Modal";
+import useDisclosure from "../../hooks/useDisclosure";
 
 export default function IndexProduct() {
+
+    const { isOpen, onOpen, onClose, onToggle } = useDisclosure(false);
+    console.log(isOpen);
 
     return (
         <>
             <Main>
-                <Modal/>
+                {
+                    isOpen ? <Modal /> : ''
+
+                }
 
 
                 <div className="content">
                     <div className="indeex-table flex flex-col gap-2">
                         <div className="flex justify-end">
-                        <button className="p-2 bg-stone-600 rounded-lg w-30 text-white"><FontAwesomeIcon icon={faSquarePlus}></FontAwesomeIcon>Product</button>
+                            <button className="p-2 bg-stone-600 rounded-lg w-30 hover:bg-stone-200 text-white"><FontAwesomeIcon icon={faSquarePlus} onClick={onOpen}></FontAwesomeIcon>Product</button>
 
                         </div>
                         <table className=" w-full">
                             <thead className="bg-stone-600 text-white ">
-
 
                                 <tr className="">
                                     <td className="w-auto    p-2  text-center ">Nama</td>
@@ -30,8 +36,6 @@ export default function IndexProduct() {
                                     <td className="w-auto   p-2 text-center ">Gambar</td>
                                     <td className="w-auto  border-{}  p-2 text-center ">Aktif</td>
                                     <td className="w-auto  border-{}  p-2 text-center ">Action</td>
-
-
 
                                 </tr>
 
@@ -64,11 +68,8 @@ export default function IndexProduct() {
                                 </tr>
 
 
-
-
-
-
                             </tbody>
+
                         </table>
                     </div>
                 </div>

@@ -30,8 +30,11 @@ export default function Login() {
 
   return (
     <div className="min-w-screen min-h-screen bg-[#D8CDBF] flex justify-center items-center">
-      <div className="w-93 h-89 bg-[#FAF9F6] rounded-3xl flex flex-col gap-11 items-center p-10  overflow-hidden relative border border-red-300">
-        <h1 className="text-2xl text-[#3B4D3E] ">Log In</h1>
+      <div className="w-93 h-89 bg-[#FAF9F6] rounded-3xl flex flex-col gap-11 items-center p-10  overflow-hidden relative borde">
+         <div className= "flex flex-col gap-3 justify-center items-center">
+          <h1 className = "text-2xl tracking-widest font-bold ">FEUILLE</h1>
+          <h1 className="text-2xl font-medium text-[#3B4D3E]">Login</h1>
+          </div>
 
         <div className="flex flex-col gap-2">
         <h1 className={`text-sm text-center text-red-600 ${isError?"inline-block":'hidden'}`}>Username dan Password salah</h1>

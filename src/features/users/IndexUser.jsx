@@ -24,17 +24,17 @@ console.log(data);
                           
                                   
                 <tr className="">
-                  {labelTable.map((data)=>{
+                  {/* {labelTable.map((data)=>{
                   return <td className="w-auto   p-2 text-center ">{data}</td>
                        
-                })}
+                })} */}
           
 
                 </tr>
 
               </thead>
               <tbody>
-                {
+                {/* {
                     data.map((data)=>{
                        return  <tr className="border-b border-gray-100">
                   <td className="  w-auto p-1">{data}</td>
@@ -44,7 +44,7 @@ console.log(data);
                    
             
             
-                }
+                } */}
                
               </tbody>
             </table>

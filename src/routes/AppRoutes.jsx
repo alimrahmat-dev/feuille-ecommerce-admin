@@ -14,6 +14,7 @@ export default function AppRoutes() {
           <Route path="/account/login" element={<Login />} />
         </Route> */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/user" element={<IndexUser />} />
         <Route path="/product" element={<IndexProduct />} />
       </Routes>
