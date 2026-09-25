@@ -22,7 +22,7 @@ export default function IndexProduct() {
                 <div className="content">
                     <div className="indeex-table flex flex-col gap-2">
                         <div className="flex justify-end">
-                            <button className="p-2 bg-stone-600 rounded-lg w-30 hover:bg-stone-200 text-white"><FontAwesomeIcon icon={faSquarePlus} onClick={onOpen}></FontAwesomeIcon>Product</button>
+                            <button className="p-2 bg-stone-600 rounded-lg w-30 hover:bg-stone-200 text-white" onClick={onOpen}><FontAwesomeIcon icon={faSquarePlus} ></FontAwesomeIcon>Product</button>
 
                         </div>
                         <table className=" w-full">
