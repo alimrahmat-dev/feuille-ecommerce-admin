@@ -9,7 +9,7 @@ export default function Modal() {
                         <div className="absolute right-0 top-0 opacity-55 flex justify-center items-center   bg-black  w-full h-full ">
 
                         </div>
-                        <div className="absolute w-1/2  mr-20  h-auto bg-white p-4 rounded-2xl">
+                        <div className="absolute w-1/4  mr-20  h-auto bg-white p-4 rounded-2xl">
                                 <div className="flex justify-between">
                                         <h1 className="font-bold text-lg">Input Produk Baru</h1>
                                         <div className="flex gap-2">
@@ -31,8 +31,8 @@ export default function Modal() {
                                                 </select>
                                         </div>
                                         <div className="flex flex-col p-2">
-                                                <label htmlFor="">Nama Produk</label>
-                                                <input type="text" className="w-full border-2 rounded-lg p-2" />
+                                                <label htmlFor="">Harga</label>
+                                                <input type="number" className="w-full border-2 rounded-lg p-2" />
                                         </div>
 
                                         <div className="w-full flex justify-end">

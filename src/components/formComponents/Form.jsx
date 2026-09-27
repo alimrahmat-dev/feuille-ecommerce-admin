@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function(){
+export default function Form() {
 
     const inputField = [
         { name: 'username', label: 'Username', type: 'text' },
@@ -10,13 +10,14 @@ export default function(){
 
     const [formData, setFormData] = useState()
 
-    const handleChange = ()=>{
-
-        setFormData({...formData},setFormData(inputField))
+    const handleChange = (e) => {
+            const{name,value} = e.target
+        setFormData({ ...formData , [name]:value})
     }
 
-    return(
+    return (
 
+        {inputField && }
 
     )
 }
