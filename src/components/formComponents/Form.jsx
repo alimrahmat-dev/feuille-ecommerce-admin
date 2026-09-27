@@ -12,7 +12,7 @@ export default function(){
 
     const handleChange = ()=>{
 
-        setFormData({...formData})
+        setFormData({...formData},setFormData(inputField))
     }
 
     return(
