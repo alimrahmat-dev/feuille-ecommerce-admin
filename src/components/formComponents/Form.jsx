@@ -17,7 +17,9 @@ export default function Form() {
 
     return (
 
-        {inputField && }
+        {inputField.map(e)=>{
+            
+        }}
 
     )
 }
