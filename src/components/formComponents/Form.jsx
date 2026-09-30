@@ -7,6 +7,8 @@ export default function Form() {
         { name: 'email', label: 'Email', type: 'text' },
         { name: 'password', label: 'Password', type: 'text' },
     ]
+    console.log(inputField);
+    
 
     const [formData, setFormData] = useState()
 
@@ -17,9 +19,14 @@ export default function Form() {
 
     return (
 
-        {inputField.map(e)=>{
-            
-        }}
+      <div>
+
+     {   inputField.map((e)=>{
+                e.type
+        }) && "text"
+        }
+
+      </div>
 
     )
 }
