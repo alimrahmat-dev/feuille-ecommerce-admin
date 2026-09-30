@@ -2,11 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import Form from "./formComponents/Form";
 
-export default function Modal() {
-
+export default function Modal({productForm}) {
+  
         return (
-
+                        
                 <>
+                {
+                        productForm.as === "input" ?
+                         
+                }
                         <div className="absolute right-0 top-0 opacity-55 flex justify-center items-center   bg-black  w-full h-full ">
                                 <Form>
                                         

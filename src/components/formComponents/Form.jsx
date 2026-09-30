@@ -2,12 +2,7 @@ import { useState } from "react"
 
 export default function Form() {
 
-    const inputField = [
-        { name: 'username', label: 'Username', type: 'text' },
-        { name: 'email', label: 'Email', type: 'text' },
-        { name: 'password', label: 'Password', type: 'text' },
-    ]
-    console.log(inputField);
+ sole.log(inputField);
     
 
     const [formData, setFormData] = useState()
@@ -21,11 +16,9 @@ export default function Form() {
 
       <div>
 
-     {   inputField.map((e)=>{
-                e.type
-        }) && "text"
-        }
+     { 
 
+     }
       </div>
 
     )

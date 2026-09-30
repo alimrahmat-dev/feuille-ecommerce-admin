@@ -8,13 +8,18 @@ import useDisclosure from "../../hooks/useDisclosure";
 export default function IndexProduct() {
 
     const { isOpen, onOpen, onClose, onToggle } = useDisclosure(false);
-    console.log(isOpen);
+
+     const productForm = [
+        { name: 'username', label: 'Username', type: 'text', as:"input" },
+        { name: 'email', label: 'Email', type: 'text', as:"input" },
+        { name: 'password', label: 'Password', type: 'text', as:"input" },
+    ]
 
     return (
         <>
             <Main>
                 {
-                    isOpen ? <Modal /> : ''
+                    isOpen ? <Modal productForm={productForm} /> : ''
 
                 }
 
