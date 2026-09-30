@@ -17,7 +17,7 @@ export default function Form() {
       <div>
 
      { 
-
+    productForm.as === "input" ?
      }
       </div>
 

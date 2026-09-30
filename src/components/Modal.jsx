@@ -7,10 +7,8 @@ export default function Modal({productForm}) {
         return (
                         
                 <>
-                {
-                        productForm.as === "input" ?
-                         
-                }
+                <Form productForm={productForm}/>
+                
                         <div className="absolute right-0 top-0 opacity-55 flex justify-center items-center   bg-black  w-full h-full ">
                                 <Form>
                                         
