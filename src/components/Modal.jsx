@@ -7,12 +7,9 @@ export default function Modal({productForm}) {
         return (
                         
                 <>
-                <Form productForm={productForm}/>
                 
                         <div className="absolute right-0 top-0 opacity-55 flex justify-center items-center   bg-black  w-full h-full ">
-                                <Form>
-                                        
-                                </Form>
+                            
                         </div>
                         <div className="absolute w-1/4  mr-20  h-auto bg-white p-4 rounded-2xl">
                                 <div className="flex justify-between">
@@ -23,8 +20,10 @@ export default function Modal({productForm}) {
 
                                         </div>
                                 </div>
-                                <form action="" className=" flex flex-col justify-center p-3 ">
-                                        <div className="flex flex-col p-2">
+                                <form action={} className=" flex flex-col justify-center p-3 ">
+                <Form productForm={productForm}/>
+
+                                        {/* <div className="flex flex-col p-2">
                                                 <label htmlFor="">Nama Produk</label>
                                                 <input type="text" className="w-full  rounded-lg p-2 border-2" />
                                         </div>
@@ -43,7 +42,7 @@ export default function Modal({productForm}) {
                                         <div className="w-full flex justify-end">
                                                 <button className=" p-3 text-center  w-1/2 rounded-lg bg-[#255D1D] hover:bg-green-600 text-white"> Simpan Produk</button>
 
-                                        </div>
+                                        </div> */}
 
                                 </form>
                         </div>
