@@ -2,15 +2,17 @@ import { useState } from "react"
 
 export default function Form({ productForm }) {
 
-    console.log(productForm);
 
 
     const [formData, setFormData] = useState()
+        console.log(formData); 
 
-    const handleChange = (e) => {
+    const handleSubmit = (e) => {
+        
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
     }
+
 
     return (
         <>
@@ -45,7 +47,7 @@ export default function Form({ productForm }) {
                     })
 
                 }
-                <button className="p-2 rounded-2xl bg-stone-600 text-white w-full">Submit</button>
+                <button className="p-2 rounded-2xl bg-stone-600 text-white w-full" onClick={handleSubmit}>Submit</button>
             </div>
 
 

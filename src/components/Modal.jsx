@@ -1,8 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import Form from "./formComponents/Form";
+import { postDataApi } from "../services/serviceApi";
 
 export default function Modal({productForm}) {
+
+        const handleSubmit = ()=>{
+                postDataApi()
+        }
   
         return (
                         
@@ -20,7 +25,7 @@ export default function Modal({productForm}) {
 
                                         </div>
                                 </div>
-                                <form action={} className=" flex flex-col justify-center p-3 ">
+                                <form action="" className=" flex flex-col justify-center p-3 ">
                 <Form productForm={productForm}/>
 
                                         {/* <div className="flex flex-col p-2">
