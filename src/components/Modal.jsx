@@ -11,6 +11,8 @@ export default function Modal({productForm}) {
         }
         
     const [formData, setFormData] = useState()
+
+    
         console.log(formData); 
 
     const handleChange = (e) => {

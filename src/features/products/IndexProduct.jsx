@@ -11,9 +11,11 @@ export default function IndexProduct() {
     
 
     const productForm = [
-        { name: 'username', label: 'Username', type: 'text', as:"input"},
-        { name: 'email', label: 'Email', type: 'text', as:"select"},
-        { name: 'password', label: 'Password', type: 'text', as:"input"},
+        { name: 'name', label: 'Nama', type: 'text', as:"input", },
+        { name: 'email', description: 'Deskripsi', type: 'text', as:"text"},
+        { name: 'category_id', label: 'Kategori', type: 'password', as:"select"},
+        { name: 'base_price', label: 'Harga Dasar', type: 'number', as:"input", dataType : "integer"},
+        { name: 'is_active', label: 'Status Aktif', type: 'radio', as:"input"},
     ]
 
 
