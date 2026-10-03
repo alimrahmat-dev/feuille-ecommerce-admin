@@ -16,8 +16,6 @@ export default function Dropdown({ datas }) {
   const listArray = data.list;
 
   const {isActive, toggleActive} = useDropdown()
-
-  
   
 
   return (
