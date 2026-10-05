@@ -1,10 +1,12 @@
 import { useState } from "react"
 
-export default function Form({ productForm, handleChange }) {
+export default function Form({ productForm }) {
 
      // Fungsi untuk mengubah angka biasa menjadi format Rupiah saat diketik
   const formatKeRupiah = (angka) => {
     const numberString = angka.replace(/[^,\d]/g, "").toString();
+    console.log("number"+numberString);
+    
     const split = numberString.split(",");
     const sisa = split[0].length % 3;
     let rupiah = split[0].substr(0, sisa);
