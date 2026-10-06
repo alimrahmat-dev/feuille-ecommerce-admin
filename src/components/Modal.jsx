@@ -2,16 +2,47 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import Form from "./formComponents/Form";
 import { postDataApi } from "../services/serviceApi";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Modal({productForm}) {
 
         const handleSubmit = ()=>{
                 postDataApi()
         }
+        const inputRef = useRef(null);
+console.log(inputRef);
+
+
         
     const [formData, setFormData] = useState()
+    const [viewPrice , setViewPrice] = useState()
 
+    //format ke rupiah
+ const formatKeRupiah = (angka) => {
+    const numberString = angka.replace(/[^,\d]/g, "").toString();
+    console.log("number"+numberString);
+    
+    const split = numberString.split(",");
+    const sisa = split[0].length % 3;
+    let rupiah = split[0].substr(0, sisa);
+    const ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    if (ribuan) {
+      const separator = sisa ? "." : "";
+      rupiah += separator + ribuan.join(".");
+    }
+
+    rupiah = split[1] !== undefined ? rupiah + "," + split[1] : rupiah;
+    return rupiah ? "Rp " + rupiah : "";
+  };
+
+  const handleRupiah = (e) => {
+    const nilaiInput = e.target.value;
+    // Simpan tampilan terformat ke state
+    setHarga(formatKeRupiah(nilaiInput));
+
+
+  };
     
         console.log(formData); 
 
@@ -19,6 +50,14 @@ export default function Modal({productForm}) {
         
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
+
+       
+        if(e.target.dataset.price){
+                const nilaiInput = e.tarfet.value
+                console.log("nilai" + nilaiInput);
+                
+                setViewPrice(formatKeRupiah(nilaiInput))
+        }
     }
   
         return (

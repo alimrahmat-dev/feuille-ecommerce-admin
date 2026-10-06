@@ -1,31 +1,9 @@
 import { useState } from "react"
 
-export default function Form({ productForm }) {
+export default function Form({ productForm, handleChange }) {
 
      // Fungsi untuk mengubah angka biasa menjadi format Rupiah saat diketik
-  const formatKeRupiah = (angka) => {
-    const numberString = angka.replace(/[^,\d]/g, "").toString();
-    console.log("number"+numberString);
-    
-    const split = numberString.split(",");
-    const sisa = split[0].length % 3;
-    let rupiah = split[0].substr(0, sisa);
-    const ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-    if (ribuan) {
-      const separator = sisa ? "." : "";
-      rupiah += separator + ribuan.join(".");
-    }
-
-    rupiah = split[1] !== undefined ? rupiah + "," + split[1] : rupiah;
-    return rupiah ? "Rp " + rupiah : "";
-  };
-
-  const handleChange = (e) => {
-    const nilaiInput = e.target.value;
-    // Simpan tampilan terformat ke state
-    setHarga(formatKeRupiah(nilaiInput));
-  };
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,7 +47,17 @@ export default function Form({ productForm }) {
 
                                                     <option value="">{e.option}</option>
                                                 </select>
-                                            </div> : ''
+                                            </div> : 
+                                            e.as === "price"?
+                                            <div>
+                                                <div className="flex flex-col p-2">
+                                                <label htmlFor="">{e.label}</label>
+                                                <div>
+                                                    <input type={e.type} className="w-full  rounded-lg p-2 border-2" data-price name={e.name} onChange={handleChange} />
+
+                                                </div>
+                                            </div>
+                                            </div>: ''
                                 }
 
                             </>
