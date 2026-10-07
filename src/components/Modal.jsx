@@ -40,6 +40,24 @@ console.log(formData)
         
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
+         if (name === 'harga') {
+      // Hilangkan semua karakter selain angka untuk mendapatkan nilai asli
+      const cleanNumber = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
+      
+      // Ubah tampilan input menjadi format Rupiah
+      const formatted = formatRupiah(value);
+
+      setFormData({
+        ...formData,
+        hargaRaw: cleanNumber,
+        hargaDisplay: formatted
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
 
     }
         return (
