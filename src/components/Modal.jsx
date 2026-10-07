@@ -9,18 +9,15 @@ export default function Modal({productForm}) {
         const handleSubmit = ()=>{
                 postDataApi()
         }
-        const inputRef = useRef(null);
-console.log(inputRef);
+        
 
 
         
     const [formData, setFormData] = useState()
-    const [viewPrice , setViewPrice] = useState()
-
+console.log(formData)
     //format ke rupiah
  const formatKeRupiah = (angka) => {
     const numberString = angka.replace(/[^,\d]/g, "").toString();
-    console.log("number"+numberString);
     
     const split = numberString.split(",");
     const sisa = split[0].length % 3;
@@ -36,30 +33,15 @@ console.log(inputRef);
     return rupiah ? "Rp " + rupiah : "";
   };
 
-  const handleRupiah = (e) => {
-    const nilaiInput = e.target.value;
-    // Simpan tampilan terformat ke state
-    setHarga(formatKeRupiah(nilaiInput));
-
-
-  };
+ 
     
-        console.log(formData); 
 
     const handleChange = (e) => {
         
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
 
-       
-        if(e.target.dataset.price){
-                const nilaiInput = e.tarfet.value
-                console.log("nilai" + nilaiInput);
-                
-                setViewPrice(formatKeRupiah(nilaiInput))
-        }
     }
-  
         return (
                         
                 <>
@@ -77,7 +59,7 @@ console.log(inputRef);
                                         </div>
                                 </div>
                                 <form action="" className=" flex flex-col justify-center p-3 ">
-                <Form productForm={productForm} handleChange={handleChange}/>
+                <Form productForm={productForm} formatRupiah={formatKeRupiah} formData={formData} handleChange={handleChange}/>
 
                                         {/* <div className="flex flex-col p-2">
                                                 <label htmlFor="">Nama Produk</label>
