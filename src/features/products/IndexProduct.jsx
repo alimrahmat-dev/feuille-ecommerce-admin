@@ -14,7 +14,7 @@ export default function IndexProduct() {
         { name: 'name', label: 'Nama', type: 'text', as:"input", },
         { name: 'email', description: 'Deskripsi', type: 'text', as:"text"},
         { name: 'category_id', label: 'Kategori', type: 'password', as:"select"},
-        { name: 'base_price', label: 'Harga Dasar', type: 'number', as:"input", dataPrice : "integer"},
+        { name: 'base_price', label: 'Harga Dasar', type: 'number', as:"input", inputType : "price"},
         { name: 'is_active', label: 'Status Aktif', type: 'radio', as:"input"},
     ]
 

@@ -2,16 +2,16 @@ import { useState } from "react"
 
 export default function Form({ productForm, handleChange }) {
 
-     // Fungsi untuk mengubah angka biasa menjadi format Rupiah saat diketik
- 
+    // Fungsi untuk mengubah angka biasa menjadi format Rupiah saat diketik
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Cara mengambil angka aslinya saja untuk dikirim ke database/API
-    const angkaAsli = harga.replace(/[^0-9]/g, "");
-    console.log("Data siap kirim:", Number(angkaAsli));
-  };
-        
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Cara mengambil angka aslinya saja untuk dikirim ke database/API
+        const angkaAsli = harga.replace(/[^0-9]/g, "");
+        console.log("Data siap kirim:", Number(angkaAsli));
+    };
+    
 
 
     return (
@@ -31,14 +31,27 @@ export default function Form({ productForm, handleChange }) {
                                                 <label htmlFor="">{e.label}</label>
                                                 <input type={e.type} className="w-full rounded-lg p-2 border-2" name={e.name} onChange={handleChange} />
                                             </div>
+                                            
                                             :
-                                            <div className="flex flex-col p-2">
-                                                <label htmlFor="">{e.label}</label>
+                                            //price
+                                             e.as === "input" && e.inputType === "price" ?
                                                 <div>
-                                                    <input type={e.type} className="w-full  rounded-lg p-2 border-2"  name={e.name} onChange={handleChange} />
+                                                    <div className="flex flex-col p-2">
+                                                        <label htmlFor="">{e.label}</label>
+                                                        <div>
+                                                            <input type={e.type} className="w-full  rounded-lg p-2 border-2" data-price name={e.name} onChange={handleChange} />
 
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                :
+                                                <div className="flex flex-col p-2">
+                                                    <label htmlFor="">{e.label}</label>
+                                                    <div>
+                                                        <input type={e.type} className="w-full  rounded-lg p-2 border-2" name={e.name} onChange={handleChange} />
+
+                                                    </div>
+                                                </div>
                                         // jika select
                                         : e.as === "select" ?
                                             <div className="flex flex-col p-2 w-full ">
@@ -47,17 +60,8 @@ export default function Form({ productForm, handleChange }) {
 
                                                     <option value="">{e.option}</option>
                                                 </select>
-                                            </div> : 
-                                            e.as === "price"?
-                                            <div>
-                                                <div className="flex flex-col p-2">
-                                                <label htmlFor="">{e.label}</label>
-                                                <div>
-                                                    <input type={e.type} className="w-full  rounded-lg p-2 border-2" data-price name={e.name} onChange={handleChange} />
-
-                                                </div>
-                                            </div>
-                                            </div>: ''
+                                            </div> :
+                                            ''
                                 }
 
                             </>
