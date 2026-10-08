@@ -4,68 +4,53 @@ import Form from "./formComponents/Form";
 import { postDataApi } from "../services/serviceApi";
 import { useRef, useState } from "react";
 
-export default function Modal({productForm}) {
+export default function Modal({ productForm }) {
 
-        const handleSubmit = ()=>{
+        const handleSubmit = () => {
                 postDataApi()
         }
-        
 
 
-        
-    const [formData, setFormData] = useState()
-console.log(formData)
-    //format ke rupiah
- const formatKeRupiah = (angka) => {
-    const numberString = angka.replace(/[^,\d]/g, "").toString();
-    
-    const split = numberString.split(",");
-    const sisa = split[0].length % 3;
-    let rupiah = split[0].substr(0, sisa);
-    const ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
-    if (ribuan) {
-      const separator = sisa ? "." : "";
-      rupiah += separator + ribuan.join(".");
-    }
 
-    rupiah = split[1] !== undefined ? rupiah + "," + split[1] : rupiah;
-    return rupiah ? "Rp " + rupiah : "";
-  };
+        const [formData, setFormData] = useState()
+        console.log(formData)
+        //format ke rupiah
+       
 
- 
-    
 
-    const handleChange = (e) => {
-        
-        const { name, value } = e.target
-        setFormData({ ...formData, [name]: value })
-         if (name === 'harga') {
-      // Hilangkan semua karakter selain angka untuk mendapatkan nilai asli
-      const cleanNumber = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
-      
-      // Ubah tampilan input menjadi format Rupiah
-      const formatted = formatRupiah(value);
 
-      setFormData({
-        ...formData,
-        hargaRaw: cleanNumber,
-        hargaDisplay: formatted
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-    }
 
-    }
+        const handleChange = (e) => {
+
+                const { name, value } = e.target
+                setFormData({ ...formData, [name]: value })
+                if (name === 'harga') {
+                        // Hilangkan semua karakter selain angka untuk mendapatkan nilai asli
+                        const cleanNumber = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
+
+                        // Ubah tampilan input menjadi format Rupiah
+                        const formatted = formatRupiah(value);
+
+                        setFormData({
+                                ...formData,
+                                hargaRaw: cleanNumber,
+                                hargaDisplay: formatted
+                        });
+                } else {
+                        setFormData({
+                                ...formData,
+                                [name]: value
+                        });
+                }
+
+        }
         return (
-                        
+
                 <>
-                
+
                         <div className="absolute right-0 top-0 opacity-55 flex justify-center items-center   bg-black  w-full h-full ">
-                            
+
                         </div>
                         <div className="absolute w-1/4  mr-20  h-auto bg-white p-4 rounded-2xl">
                                 <div className="flex justify-between">
@@ -77,7 +62,8 @@ console.log(formData)
                                         </div>
                                 </div>
                                 <form action="" className=" flex flex-col justify-center p-3 ">
-                <Form productForm={productForm} formatRupiah={formatKeRupiah} formData={formData} handleChange={handleChange}/>
+                                        <Form productForm={productForm}  formData={formData} handleChange={handleChange} />
+
 
                                         {/* <div className="flex flex-col p-2">
                                                 <label htmlFor="">Nama Produk</label>

@@ -10,6 +10,7 @@ export default function IndexProduct() {
     const { isOpen, onOpen, onClose, onToggle } = useDisclosure(false);
     
 
+    //dataTable
     const productForm = [
         { name: 'name', label: 'Nama', type: 'text', as:"input", },
         { name: 'email', description: 'Deskripsi', type: 'text', as:"text"},

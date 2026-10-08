@@ -1,6 +1,7 @@
 import { useState } from "react"
+import InputHarga from "./InputHarga";
 
-export default function Form({ productForm, handleChange, formatRupiah, formData }) {
+export default function Form({ productForm, handleChange }) {
 
     // Fungsi untuk mengubah angka biasa menjadi format Rupiah saat diketik
 
@@ -26,7 +27,6 @@ export default function Form({ productForm, handleChange, formatRupiah, formData
                                 {
                                     // jika Input
                                     e.as === "input" ?
-                                    //jika radio
                                         e.type === "radio" ?
                                             <div>
                                                 <label htmlFor="">{e.label}</label>
@@ -36,15 +36,7 @@ export default function Form({ productForm, handleChange, formatRupiah, formData
                                             :
                                             //price
                                              e.as === "input" && e.inputType === "price" ?
-                                                <div>
-                                                    <div className="flex flex-col p-2">
-                                                        <label htmlFor="">{e.label}</label>
-                                                        <div>
-                                                            <input type={e.type} className="w-full bg-gray-400 rounded-lg p-2 border-2" data-price name={e.name}  onChange={handleChange} />
-
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <InputHarga></InputHarga>
                                                 :
                                                 <div className="flex flex-col p-2">
                                                     <label htmlFor="">{e.label}</label>
