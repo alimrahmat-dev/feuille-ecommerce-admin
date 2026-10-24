@@ -29,6 +29,7 @@ export default function Login() {
   };
 
   return (
+    //
     <div className="min-w-screen min-h-screen bg-[#D8CDBF] flex justify-center items-center">
       <div className="w-93 h-89 bg-[#FAF9F6] rounded-3xl flex flex-col gap-11 items-center p-10  overflow-hidden relative borde">
          <div className= "flex flex-col gap-3 justify-center items-center">
@@ -69,6 +70,8 @@ export default function Login() {
             Log In
           </Button>
         </form>
+
+
         </div>
         
         

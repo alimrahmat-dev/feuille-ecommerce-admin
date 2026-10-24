@@ -4,6 +4,8 @@ import { faPenToSquare, faTrashCan, faSquarePlus } from "@fortawesome/free-regul
 import Main from "../../layouts/Main";
 import Modal from "../../components/Modal";
 import useDisclosure from "../../hooks/useDisclosure";
+import Input from "../../components/formComponents/Input";
+import InputHarga from "../../components/formComponents/InputHarga";
 
 export default function IndexProduct() {
 
@@ -25,11 +27,16 @@ export default function IndexProduct() {
     return (
         <>
             <Main>
-                {
-                    isOpen ? <Modal productForm={productForm} /> : ''
-
-                }
-
+              {
+                isOpen? <Modal>
+                    
+                    <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}/>
+                    <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}/>
+                    <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}/>
+                    <InputHarga  name={'base_price'} placeholder={"Masukan Harga"} label={"Harga"}></InputHarga>
+                </Modal>:''
+                    
+              }
 
                 <div className="content">
                     <div className="indeex-table flex flex-col gap-2">

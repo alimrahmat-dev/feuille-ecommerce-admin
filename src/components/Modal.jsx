@@ -4,47 +4,38 @@ import Form from "./formComponents/Form";
 import { postDataApi } from "../services/serviceApi";
 import { useRef, useState } from "react";
 
-export default function Modal({ productForm }) {
+export default function Modal({ productForm, children }) {
 
         const handleSubmit = () => {
                 postDataApi()
         }
 
-
-
-
-        const [formData, setFormData] = useState()
-        console.log(formData)
+        
         //format ke rupiah
-       
+        // const handleChange = (e) => {
 
+        //         const { name, value } = e.target
+        //         setFormData({ ...formData, [name]: value })
+        //         if (name === 'harga') {
+        //                 // Hilangkan semua karakter selain angka untuk mendapatkan nilai asli
+        //                 const cleanNumber = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
 
+        //                 // Ubah tampilan input menjadi format Rupiah
+        //                 const formatted = formatRupiah(value);
 
+        //                 setFormData({
+        //                         ...formData,
+        //                         hargaRaw: cleanNumber,
+        //                         hargaDisplay: formatted
+        //                 });
+        //         } else {
+        //                 setFormData({
+        //                         ...formData,
+        //                         [name]: value
+        //                 });
+        //         }
 
-        const handleChange = (e) => {
-
-                const { name, value } = e.target
-                setFormData({ ...formData, [name]: value })
-                if (name === 'harga') {
-                        // Hilangkan semua karakter selain angka untuk mendapatkan nilai asli
-                        const cleanNumber = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
-
-                        // Ubah tampilan input menjadi format Rupiah
-                        const formatted = formatRupiah(value);
-
-                        setFormData({
-                                ...formData,
-                                hargaRaw: cleanNumber,
-                                hargaDisplay: formatted
-                        });
-                } else {
-                        setFormData({
-                                ...formData,
-                                [name]: value
-                        });
-                }
-
-        }
+        // }
         return (
 
                 <>
@@ -61,30 +52,8 @@ export default function Modal({ productForm }) {
 
                                         </div>
                                 </div>
-                                <form action="" className=" flex flex-col justify-center p-3 ">
-                                        <Form productForm={productForm}  formData={formData} handleChange={handleChange} />
-
-
-                                        {/* <div className="flex flex-col p-2">
-                                                <label htmlFor="">Nama Produk</label>
-                                                <input type="text" className="w-full  rounded-lg p-2 border-2" />
-                                        </div>
-                                        <div className="flex flex-col p-2 w-full ">
-                                                <label htmlFor="">Nama Produk</label>
-                                                <select type="text" className="w-1/2 border-2 rounded-lg">
-
-                                                        <option value="">as</option>
-                                                </select>
-                                        </div>
-                                        <div className="flex flex-col p-2">
-                                                <label htmlFor="">Harga</label>
-                                                <input type="number" className="w-full border-2 rounded-lg p-2" />
-                                        </div>
-
-                                        <div className="w-full flex justify-end">
-                                                <button className=" p-3 text-center  w-1/2 rounded-lg bg-[#255D1D] hover:bg-green-600 text-white"> Simpan Produk</button>
-
-                                        </div> */}
+                                <form onSubmit={handleSubmit} className="">
+                                {children}
 
                                 </form>
                         </div>
