@@ -19,7 +19,7 @@ export default function Sidebar({ className }) {
       className={`bg-[#3B4D3E] ${className} flex flex-col items-center gap-15 text-[#FFFFFF] p-4 text-[16px] border border-pink-400`}
     >
       {/* logo */}
-      <div className="font-intel-mono border border-amber-500 w-full text-center">
+      <div className="font-intel-mono border border-amber-500 w-full text-center hover:bg-red-200">
         <span>FEUILLE</span>
       </div>
 

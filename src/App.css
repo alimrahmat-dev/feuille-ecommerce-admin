@@ -13,4 +13,7 @@
    .index-table{
       @apply rounded-lg  overflow-y-hidden overflow-x-hidden
    }
+   .hoverbg{
+      @apply bg-[#D8CDBF]
+   }
 }
