@@ -6,17 +6,21 @@ import IndexUser from "../features/users/IndexUser";
 import IndexProduct from "../features/products/IndexProduct";
 export default function AppRoutes() {
   const token = localStorage.getItem("token");
+  
+  
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<Navigate to="/account/login" />} />
-          <Route path="/account/login" element={<Login />} />
-        </Route> */}
-        <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+     
+        <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Dashboard/>} />
+        </Route>
+        {/* <Route path="/dashboard" element={<Dashboard />} />
         <Route path="auth/login" element={<Login />} />
         <Route path="/user" element={<IndexUser />} />
-        <Route path="/product" element={<IndexProduct />} />
+        <Route path="/product" element={<IndexProduct />} /> */}
       </Routes>
     </BrowserRouter>
   );
