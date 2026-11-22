@@ -12,15 +12,7 @@ export default function IndexProduct() {
     const { isOpen, onOpen, onClose, onToggle } = useDisclosure(false);
     
 
-    //dataTable
-    const productForm = [
-        { name: 'name', label: 'Nama', type: 'text', as:"input", },
-        { name: 'email', description: 'Deskripsi', type: 'text', as:"text"},
-        { name: 'category_id', label: 'Kategori', type: 'password', as:"select"},
-        { name: 'base_price', label: 'Harga Dasar', type: "text", as:"input", inputType : "price"},
-        { name: 'is_active', label: 'Status Aktif', type: 'radio', as:"input"},
-    ]
-
+  
 
     
 
@@ -28,13 +20,7 @@ export default function IndexProduct() {
         <>
             <Main>
               {
-                isOpen? <Modal>
-                    
-                    <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}/>
-                    <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}/>
-                    <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}/>
-                    <InputHarga  name={'base_price'} placeholder={"Masukan Harga"} label={"Harga"}></InputHarga>
-                </Modal>:''
+                isOpen? :''
                     
               }
 

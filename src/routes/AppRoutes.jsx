@@ -11,16 +11,17 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-            <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
-     
-        <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<Dashboard/>} />
-        </Route>
-        {/* <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="auth/login" element={<Login />} />
         <Route path="/user" element={<IndexUser />} />
-        <Route path="/product" element={<IndexProduct />} /> */}
+     
+        {/* <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Dashboard/>} />
+        <Route path="/user" element={<IndexUser />} />
+
+        </Route> */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="auth/login" element={<Login />} />
+        <Route path="/product" element={<IndexProduct />} />
       </Routes>
     </BrowserRouter>
   );

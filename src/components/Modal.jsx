@@ -4,38 +4,10 @@ import Form from "./formComponents/Form";
 import { postDataApi } from "../services/serviceApi";
 import { useRef, useState } from "react";
 
-export default function Modal({ productForm, children }) {
+export default function Modal({children }) {
 
-        const handleSubmit = () => {
-                postDataApi()
-        }
 
-        
-        //format ke rupiah
-        // const handleChange = (e) => {
-
-        //         const { name, value } = e.target
-        //         setFormData({ ...formData, [name]: value })
-        //         if (name === 'harga') {
-        //                 // Hilangkan semua karakter selain angka untuk mendapatkan nilai asli
-        //                 const cleanNumber = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
-
-        //                 // Ubah tampilan input menjadi format Rupiah
-        //                 const formatted = formatRupiah(value);
-
-        //                 setFormData({
-        //                         ...formData,
-        //                         hargaRaw: cleanNumber,
-        //                         hargaDisplay: formatted
-        //                 });
-        //         } else {
-        //                 setFormData({
-        //                         ...formData,
-        //                         [name]: value
-        //                 });
-        //         }
-
-        // }
+  
         return (
 
                 <>

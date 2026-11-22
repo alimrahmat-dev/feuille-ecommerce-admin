@@ -6,7 +6,7 @@ export default function ProtectedRoute() {
   console.log(isAuthenticated);
   
   if(isAuthenticated){
-    return <Navigate to={"/account/login"} replace/>
+    return <Navigate to={"/login"} replace/>
 
   }
   return <Outlet/>
