@@ -16,4 +16,8 @@
    .hoverbg{
       @apply bg-[#D8CDBF]
    }
+
+   .primary{
+      @apply bg-stone-600
+   }
 }

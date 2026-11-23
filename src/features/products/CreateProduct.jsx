@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Input from "../../components/formComponents/Input";
 import Modal from "../../components/Modal";
 
@@ -12,6 +13,15 @@ export default function CreateProduct() {
     // ]
 
     const [harga, setHarga] = useState()
+    console.log("harga" +harga);
+
+        const handleSubmit = (e) => {
+        e.preventDefault();
+        // Cara mengambil angka aslinya saja untuk dikirim ke database/API
+        const angkaAsli = harga.replace(/[^0-9]/g, "");
+        console.log("Data siap kirim:", Number(angkaAsli));
+    };
+    
 
      const formatKeRupiah = (angka) => {
                 const numberString = angka.replace(/[^,\d]/g, "").toString();
@@ -38,11 +48,15 @@ export default function CreateProduct() {
 
     return (
         <Modal>
+                                <form onSubmit={handleSubmit} className="flex flex-col gap-2" >
+            
             <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"} />
             <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"} />
             <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"} />
-            <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}onChange={handleChange}    />
-            <InputHarga name={'base_price'} placeholder={"Masukan Harga"} label={"Harga"}></InputHarga>
+            <Input type={"text"} name={'name'} placeholder={"Nama Produk"} label={"Produk"}onChange={handleChange} value={harga}    />
+
+            <button className="p-2 primary text-white rounded-2xl">Kirim</button>
+            </form>
         </Modal>
     )
 } 

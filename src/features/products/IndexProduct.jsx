@@ -6,6 +6,7 @@ import Modal from "../../components/Modal";
 import useDisclosure from "../../hooks/useDisclosure";
 import Input from "../../components/formComponents/Input";
 import InputHarga from "../../components/formComponents/InputHarga";
+import CreateProduct from "./CreateProduct";
 
 export default function IndexProduct() {
 
@@ -20,7 +21,7 @@ export default function IndexProduct() {
         <>
             <Main>
               {
-                isOpen? :''
+                isOpen? <CreateProduct></CreateProduct> :''
                     
               }
 

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import Form from "./formComponents/Form";
 import { postDataApi } from "../services/serviceApi";
 import { useRef, useState } from "react";
 
@@ -24,10 +23,8 @@ export default function Modal({children }) {
 
                                         </div>
                                 </div>
-                                <form onSubmit={handleSubmit} className="">
                                 {children}
 
-                                </form>
                         </div>
                 </>
 
